@@ -10,16 +10,16 @@ project.ext {
     timberVersion = "4.5.1"
     daggerVersion = "2.16"
     rx2FastAndroidNetworking = '1.0.2'
-    roomDatabaseVersion = '2.4.0'
+    roomDatabaseVersion = '2.3.0'
 }
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "31.0.0"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -120,7 +120,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
     testImplementation 'junit:junit:4.+'
 
     api "bo.gob.impuestos.sfe:siat-soap:2.0.0"

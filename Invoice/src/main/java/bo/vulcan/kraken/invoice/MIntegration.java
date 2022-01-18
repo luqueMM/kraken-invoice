@@ -48,9 +48,9 @@ public interface MIntegration {
     Single<IntegrationResponse> syncSiatMeasurementUnit();
     Single<List<SiatMeasurementUnit>> getSiatMeasurementUnitList();
 
-    Single<InvoicePdf> getInvoiceById(Long id);
+    Single<InvoicePdf> getInvoiceByLocalId(String id);
     Single<List<InvoicePdf>> getInvoices();
-    Single<Invoice> createInvoiceBuyAndSell(BuyAndSellRequest buyAndSellRequest);
+    Single<InvoicePdf> createInvoiceBuyAndSell(BuyAndSellRequest buyAndSellRequest);
 
     public static final class MIntegrationObject {
         private static MIntegration value;

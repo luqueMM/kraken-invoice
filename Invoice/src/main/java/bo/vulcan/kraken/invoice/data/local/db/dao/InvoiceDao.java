@@ -39,7 +39,11 @@ public interface InvoiceDao {
 
     @Transaction
     @Query("SELECT * FROM invoice WHERE id LIKE :id LIMIT 1")
-    Single<InvoiceAndInvoiceDetail> getInvoiceWithInvoiceDetail(Long id);
+    Single<InvoiceAndInvoiceDetail> getInvoiceWithInvoiceDetailById(Long id);
+
+    @Transaction
+    @Query("SELECT * FROM invoice WHERE local_id LIKE :localId LIMIT 1")
+    Single<InvoiceAndInvoiceDetail> getInvoiceWithInvoiceDetailByLocalId(String localId);
 
     @Transaction
     @Query("SELECT * FROM invoice")

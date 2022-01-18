@@ -58,6 +58,10 @@ public class SyncUseCase {
     }
 
     public Single<IntegrationResponse> syncSiatCurrencyType() {
+        if(mDataManager.getCompany() == null){
+            return ErrorHelper.errorSync();
+        }
+
         return this.mDataManager.getAllCurrencyTypes(mDataManager.getCompany().getId())
                 .flatMap(response -> mDataManager.syncSiatCurrencyTypeList(response))
                 .onErrorResumeNext(new ErrorHelper()::onError)
@@ -68,6 +72,10 @@ public class SyncUseCase {
     }
 
     public Single<IntegrationResponse> syncSiatDocumentType() {
+        if(mDataManager.getCompany() == null){
+            return ErrorHelper.errorSync();
+        }
+
         return this.mDataManager.getAllDocumentTypes(mDataManager.getCompany().getId())
                 .flatMap(mDataManager::syncSiatDocumentTypeList)
                 .onErrorResumeNext(new ErrorHelper()::onError)
@@ -78,6 +86,10 @@ public class SyncUseCase {
     }
 
     public Single<IntegrationResponse> syncSiatPaymentMethodType() {
+        if(mDataManager.getCompany() == null){
+            return ErrorHelper.errorSync();
+        }
+
         return this.mDataManager.getAllPaymentMethodTypes(mDataManager.getCompany().getId())
                 .flatMap(mDataManager::syncSiatPaymentMethodTypeList)
                 .onErrorResumeNext(new ErrorHelper()::onError)
@@ -88,6 +100,10 @@ public class SyncUseCase {
     }
 
     public Single<IntegrationResponse> syncProducts() {
+        if(mDataManager.getCompany() == null){
+            return ErrorHelper.errorSync();
+        }
+
         return this.mDataManager.getAllProducts(mDataManager.getCompany().getId())
                 .flatMap(mDataManager::syncProductList)
                 .onErrorResumeNext(new ErrorHelper()::onError)
@@ -98,6 +114,10 @@ public class SyncUseCase {
     }
 
     public Single<IntegrationResponse> syncSiatProducts() {
+        if(mDataManager.getCompany() == null){
+            return ErrorHelper.errorSync();
+        }
+
         return this.mDataManager.getAllSiatProducts(mDataManager.getCompany().getId())
                 .flatMap(mDataManager::syncSiatProductList)
                 .onErrorResumeNext(new ErrorHelper()::onError)
@@ -108,6 +128,10 @@ public class SyncUseCase {
     }
 
     public Single<IntegrationResponse> syncBranchActivityLegend() {
+        if(mDataManager.getCompany() == null){
+            return ErrorHelper.errorSync();
+        }
+
         return this.mDataManager.getAllBranchActivityLegends(mDataManager.getBranch().getId())
                 .flatMap(mDataManager::syncBranchActivityLegendList)
                 .onErrorResumeNext(new ErrorHelper()::onError)
@@ -118,6 +142,10 @@ public class SyncUseCase {
     }
 
     public Single<IntegrationResponse> syncSiatMeasurementUnit() {
+        if(mDataManager.getCompany() == null){
+            return ErrorHelper.errorSync();
+        }
+
         return this.mDataManager.getAllSiatMeasurementUnit(mDataManager.getCompany().getId())
                 .flatMap(mDataManager::syncSiatMeasurementUnitList)
                 .onErrorResumeNext(new ErrorHelper()::onError)

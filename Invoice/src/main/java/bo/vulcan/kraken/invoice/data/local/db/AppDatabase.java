@@ -36,7 +36,7 @@ import bo.vulcan.kraken.invoice.data.model.db.SiatProduct;
         Invoice.class,
         InvoiceDetail.class,
         SiatMeasurementUnit.class
-}, version = 10, exportSchema = false)
+}, version = 1, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 

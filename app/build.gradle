@@ -14,13 +14,13 @@ project.ext {
 }
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "31.0.0"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.0"
 
     defaultConfig {
         applicationId "bo.vulcan.demoinvoice"
         minSdkVersion 19
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -43,21 +43,21 @@ android {
             dimension 'version'
             applicationId "bo.vulcan.demoinvoiceprod"
             minSdkVersion 19
-            targetSdkVersion 31
+            targetSdkVersion 30
             buildConfigField "String", "HOST_URL", "\"host url 1\""
         }
         dev {
             dimension 'version'
             applicationId "bo.vulcan.demoinvoicedev"
             minSdkVersion 19
-            targetSdkVersion 31
+            targetSdkVersion 30
             buildConfigField "String", "HOST_URL", "\"host url 2\""
         }
     }
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'

@@ -150,13 +150,13 @@ public class MIntegrationImpl implements MIntegration {
 
     //------- CREATE INVOICE ------------
     @Override
-    public Single<Invoice> createInvoiceBuyAndSell(BuyAndSellRequest buyAndSellRequest) {
+    public Single<InvoicePdf> createInvoiceBuyAndSell(BuyAndSellRequest buyAndSellRequest) {
         return invoiceUseCase.createBuyAndSell(buyAndSellRequest, InvoiceType.GENERIC);
     }
 
     @Override
-    public Single<InvoicePdf> getInvoiceById(Long id) {
-        return invoiceUseCase.getInvoiceById(id);
+    public Single<InvoicePdf> getInvoiceByLocalId(String id) {
+        return invoiceUseCase.getInvoiceByLocalId(id);
     }
 
     @Override

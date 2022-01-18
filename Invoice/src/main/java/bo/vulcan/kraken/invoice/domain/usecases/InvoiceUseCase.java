@@ -44,7 +44,7 @@ public class InvoiceUseCase {
         this.integrationService = integrationService;
     }
 
-    public Single<Invoice> createBuyAndSell(BuyAndSellRequest request, InvoiceType invoiceType){
+    public Single<InvoicePdf> createBuyAndSell(BuyAndSellRequest request, InvoiceType invoiceType){
         return ErrorsManager.startValidate(request.validate())
                 .flatMap(response -> invoiceUtilService.validateCurrencyFields(request.getCurrencyIso() != null ? request.getCurrencyIso().toString() : null, request.getExchangeRate()))
                 .flatMap(response -> invoiceUtilService.validateDocumentTypeField(request.getDocumentTypeCode().toString()))
@@ -55,7 +55,8 @@ public class InvoiceUseCase {
                     Invoice invoice = integrationService.createInvoice(request, invoiceType, false);
 
                     return invoice;
-                });
+                })
+                .flatMap(response -> getInvoiceByLocalId(response.getLocalId()));
     }
 
     public Single<IntegrationResponse> createProductReachedByIce(){
@@ -77,8 +78,8 @@ public class InvoiceUseCase {
                 });
     }
 
-    public Single<InvoicePdf> getInvoiceById(Long id) {
-        return mDataManager.invoiceRepository().getInvoiceWithInvoiceDetail(id)
+    public Single<InvoicePdf> getInvoiceByLocalId(String localId) {
+        return mDataManager.invoiceRepository().getInvoiceWithInvoiceDetailByLocalId(localId)
                 .map(invoice -> {
                     Company company = mDataManager.getCompany();
                     return toInvoicePDF(invoice, company);

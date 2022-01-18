@@ -55,7 +55,7 @@ import io.reactivex.Completable;
 import io.reactivex.Single;
 
 @Singleton
-public class AppDataManager implements DataManager{
+public class AppDataManager implements DataManager {
 
     private final Gson mGson;
     private final Context mContext;
@@ -111,7 +111,8 @@ public class AppDataManager implements DataManager{
     public Single<SystemStatus> syncSystemStatus() {
         //TODO add service and init run JOB: debe habe un job que verifique la conexion cada cierto tiempo
         try {
-            Type type = new TypeToken<SystemStatus>() {}.getType();
+            Type type = new TypeToken<SystemStatus>() {
+            }.getType();
             SystemStatus value = mGson.fromJson(CommonUtils.loadJSONFromAsset(mContext, TestConstants.SIAT_JOB_SYSTEM_STATUS), type);
 
             setSystemStatus(value);
@@ -168,8 +169,8 @@ public class AppDataManager implements DataManager{
 
         return siatActivityDeleteAll()
                 .andThen(siatActivityInsertList(siatActivities)
-                .flatMap(response -> branchActivityLegendDeleteAll()
-                        .andThen(branchActivityLegendInsertList(branchActivityLegends))));
+                        .flatMap(response -> branchActivityLegendDeleteAll()
+                                .andThen(branchActivityLegendInsertList(branchActivityLegends))));
     }
 
     @Override
@@ -187,7 +188,8 @@ public class AppDataManager implements DataManager{
 
     @Override
     public void setAccessToken(String accessToken) {
-        if(accessToken != null && !accessToken.isEmpty()){
+        if (accessToken != null && !accessToken.isEmpty()) {
+            accessToken = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdW5uYSIsImF1dGgiOiIxIiwiZXhwIjoxNjQzMzgyNDQ5fQ.eOZ_1t2axxIBVEDsiYfcbSVsnGsYN40H0J_adskbdTahPSJ9nfqmezZc8QFi-DjFxUVfjZI3KiM0sPw0YdsNWg";
             accessToken = "Bearer " + accessToken;
         }
 

@@ -15,4 +15,8 @@ public class ErrorHelper<T> {
             return Single.error(new Exception(e.toString()));
         }
     }
+
+    public static Single errorSync(){
+        return Single.error(new NullPointerException("Los datos de compañia no estan sincronizados"));
+    }
 }

@@ -30,7 +30,7 @@ public class CreateInvoiceViewModel extends ViewModel {
         disposables.add(mIntegration.createInvoiceBuyAndSell(getBuyAndSellRequest())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe((response) -> navigator.updateResponse("CREATE INVOICE SUCCESS: " + response),
+                .subscribe((invoice) -> navigator.updateResponse("CREATE INVOICE SUCCESS: " + invoice),
                         error -> {
                             navigator.updateResponse("ERROR: " + error);
                             error.printStackTrace();
