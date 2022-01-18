@@ -1,0 +1,3 @@
+include ':Invoice'
+include ':app'
+rootProject.name = "Demo Invoice"

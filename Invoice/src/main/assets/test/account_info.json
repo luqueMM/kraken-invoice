@@ -1,0 +1,63 @@
+{
+  "user": {
+    "id": 1451,
+    "login": "lunna",
+    "firstName": "Marina",
+    "lastName": "Luque",
+    "email": null,
+    "seeFullInvoice": false,
+    "roleId": 9951
+  },
+  "company": {
+    "id": 1,
+    "nit": "335312020",
+    "name": "VULCAN LTDA.",
+    "shortName": "VULCAN",
+    "legalAddress": "CALLE REPUBLICA DOMINICANA NRO.2093 EDIFICIO MEDICAL CENTER PISO 4 DPTO. OFICINA B ZONA MIRAFLORES",
+    "webAddress": "https://www.tigo.com.bo",
+    "nameEmergencyContact": "SIN Nombre",
+    "phoneEmergencyContact": "72000001",
+    "emailEmergencyContact": "contacto@vulcan.bo",
+    "templateInvoice": null,
+    "invoiceMessage": "Mensaje 1",
+    "mode": "ONLINE_ELECTRONICS",
+    "environment": "TEST",
+    "tokenSin": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqbW95YSIsImNvZGlnb1Npc3RlbWEiOiI2RDIzRUUzMDA3N0ZFRUM0NzY4Q0MwNyIsIm5pdCI6Ikg0c0lBQUFBQUFBQUFETTJOalUyTkRJd01nQUFnR1BqcXdrQUFBQT0iLCJpZCI6NTk4MzAzLCJleHAiOjE2NzA1NDQwMDAsImlhdCI6MTYzOTA2NjUyOSwibml0RGVsZWdhZG8iOjMzNTMxMjAyMCwic3Vic2lzdGVtYSI6IlNGRSJ9.O0-x9BxvqJ9NBhWRgVG2uNQmbV0UQ4YDTmGJ2aPRQv-uN5071zvUeAtloIarPt9TX_R5w9j4U5-opf9aEr-trA",
+    "tokenExpirationDateSin": "2022-03-05T04:00:00Z",
+    "systemCode": "6D23EE30077FEEC4768CC07",
+    "documentSectorType": "BUY_AND_SELL_INVOICE",
+    "invoiceReturnType": "INVOICE",
+    "imageName": "335312020-3344a977c77e4f0992a1535485785d2f"
+  },
+  "branch": {
+    "id": 1,
+    "name": "Casa Matriz",
+    "bccsId": 1,
+    "number": 0,
+    "address": "Av. Juan Pablo II, s/n, zona Santa Rosa",
+    "phone": "4268287",
+    "country": "Bolivia",
+    "city": "Cochabamba",
+    "enabled": true
+  },
+  "salePoint": {
+    "id": 75151,
+    "code": 9,
+    "name": "test",
+    "description": "test",
+    "salePointType": "5",
+    "enabled": true
+  },
+  "company_default_field": {
+    "documentTypeCode": "1",
+    "paymentMethodTypeCode": "1",
+    "currencyCode": "1",
+    "exchangeRate": 1,
+    "siatProductCode": 99100,
+    "siatMeasurementUnitCode": 58,
+    "productCode": "001",
+    "cancelReasonCode": "3",
+    "branchId": 1,
+    "economicActivityId": 8002
+  }
+}

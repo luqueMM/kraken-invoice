@@ -1,0 +1,62 @@
+{
+  "user": {
+    "id": 1451,
+    "login": "lunna",
+    "first_name": "Marina",
+    "last_name": "Luque",
+    "email": null,
+    "seeFullInvoice": false,
+    "role_id": 9951
+  },
+  "company": {
+    "id": 1,
+    "nit": "335312020",
+    "name": "VULCAN LTDA.",
+    "short_name": "VULCAN",
+    "legal_address": "CALLE REPUBLICA DOMINICANA NRO.2093 EDIFICIO MEDICAL CENTER PISO 4 DPTO. OFICINA B ZONA MIRAFLORES",
+    "web_address": "https://www.tigo.com.bo",
+    "name_emergency_contact": "SIN Nombre",
+    "phone_emergency_contact": "72000001",
+    "email_emergency_contact": "contacto@vulcan.bo",
+    "template_invoice": null,
+    "invoice_message": "Mensaje 1",
+    "jhi_mode": "ONLINE_ELECTRONICS",
+    "environment": "TEST",
+    "token_sin": null,
+    "tokenExpirationDateSin": "2022-01-07T22:03:59.951Z",
+    "system_code": null,
+    "document_sector_type": "BUY_AND_SELL_INVOICE",
+    "invoice_return_type": "INVOICE",
+    "image_name": "http://tigosfe.vulcan.technology/gateway/files/companies/335312020-3344a977c77e4f0992a1535485785d2f"
+  },
+  "branch": {
+    "id": 1,
+    "name": "Casa Matriz",
+    "jhi_number": 0,
+    "address": "Av. Juan Pablo II, s/n, zona Santa Rosa",
+    "phone": "4268287",
+    "country": "Bolivia",
+    "city": "Cochabamba",
+    "enabled": true
+  },
+  "salePoint": {
+    "id": 75151,
+    "code": 9,
+    "name": "test",
+    "description": "test",
+    "sale_point_type": "5",
+    "enabled": true
+  },
+  "company_default_field": {
+    "documentTypeCode": "1",
+    "paymentMethodTypeCode": "1",
+    "currencyCode": "1",
+    "exchangeRate": 1,
+    "siatProductCode": 99100,
+    "siatMeasurementUnitCode": 58,
+    "productCode": "001",
+    "cancelReasonCode": "3",
+    "branchId": 1,
+    "economicActivityId": 8002
+  }
+}
