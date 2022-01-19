@@ -24,6 +24,6 @@ public interface ProductDao {
     @Query("SELECT * FROM product")
     Single<List<Product>> loadAll();
 
-    @Query("SELECT * FROM product p WHERE p.company_id = :companyId AND p.product_code LIKE :productCode AND p.product_origin LIKE :productOrigin LIMIT 1")
-    Product findFirstByCompanyIdAndProductCodeAndProductOrigin(Long companyId, String productCode, InvoiceType productOrigin);
+    @Query("SELECT * FROM product p WHERE p.product_code LIKE :productCode AND p.product_origin LIKE :productOrigin LIMIT 1")
+    Product findFirstByCompanyIdAndProductCodeAndProductOrigin(String productCode, InvoiceType productOrigin);
 }

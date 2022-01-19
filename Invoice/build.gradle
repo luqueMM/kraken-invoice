@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
 }
 
 project.ext {
@@ -21,7 +22,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
 
         multiDexEnabled true
 
@@ -113,6 +114,41 @@ android {
 //             buildConfigField "String", "SIAT_API_PROD_financial-entity", "\"https://siatrest.impuestos.gob.bo/v2/ServicioFacturacionEntidadFinanciera?wsdl\""
 //             buildConfigField "String", "SIAT_API_PROD_credit-debit-note", "\"https://siatrest.impuestos.gob.bo/v2/ServicioFacturacionDocumentoAjuste?wsdl\""
 //             buildConfigField "String", "SIAT_API_PROD_electronic", "\"https://siatrest.impuestos.gob.bo/v2/ServicioFacturacionElectronica?wsdl\""
+        }
+    }
+}
+
+def githubProperties = new Properties()
+githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+
+
+def getVersionName = { ->
+    return "0.0.1" // Replace with version Name
+}
+
+def getArtificatId = { ->
+    return "Invoice"
+}
+
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId 'bo.vulcan.krakendocs'
+            artifactId getArtificatId()
+            version getVersionName()
+            artifact("$buildDir/outputs/aar/${getArtificatId()}-dev-debug.aar")
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/luqueMM/kraken-invoice")
+
+            credentials {
+                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
+                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+            }
         }
     }
 }

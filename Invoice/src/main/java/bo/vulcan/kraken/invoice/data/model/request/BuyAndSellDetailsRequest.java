@@ -27,8 +27,9 @@ public class BuyAndSellDetailsRequest extends AbstractDetailsRequest {
             BigDecimal quantity,
             String concept,
             BigDecimal unitPrice,
-            BigDecimal subtotal) {
-        super(quantity, concept, unitPrice, subtotal);
+            BigDecimal subtotal,
+            String productCode) {
+        super(quantity, concept, unitPrice, subtotal, productCode);
     }
 
     public String validate() {

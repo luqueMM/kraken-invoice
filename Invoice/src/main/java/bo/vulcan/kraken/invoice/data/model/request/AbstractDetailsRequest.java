@@ -66,13 +66,14 @@ public abstract class AbstractDetailsRequest {
             BigDecimal quantity,
             String concept,
             BigDecimal unitPrice,
-            BigDecimal subtotal) {
+            BigDecimal subtotal,
+            String productCode) {
         this.quantity = quantity;
         this.concept = concept;
         this.unitPrice = unitPrice;
         this.subtotal = subtotal;
 //        this.sequence = sequence;
-//        this.productCode = productCode;
+        this.productCode = productCode;
         this.discountAmount = new BigDecimal(0);
     }
 

@@ -205,7 +205,7 @@ public class InvoiceService {
 
             if (item.getProductCode() != null) {
                 String productCode = item.getProductCode();
-                Product product = mDataManager.product().findFirstByCompanyIdAndProductCodeAndProductOrigin(company.getId(), productCode, invoice.getInvoiceType());
+                Product product = mDataManager.product().findFirstByCompanyIdAndProductCodeAndProductOrigin(productCode, invoice.getInvoiceType());
                 if(product == null){
                     throw new ProductNotFoundException();
                 }
@@ -361,6 +361,8 @@ public class InvoiceService {
 //            }
 
 //            invoice.setServerOrigin(applicationProperties.getServer().getId());
+            //TODO cuando se cree en contingencia asignar invalidNit como true
+
             invoice = mDataManager.invoiceSave(invoice);
             mDataManager.invoiceDetailSaveAll(invoice.getDetails());
         }

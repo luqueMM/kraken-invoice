@@ -71,7 +71,7 @@ public class InvoiceUtilService {
         return single.flatMap(response -> {
             if (response) {
                 SiatCurrencyType siatCurrencyType = mDataManager.siatCurrencyTypeRepository().findFirstByClassifierCode(currencyCode);
-                if (siatCurrencyType == null) {
+                if (siatCurrencyType != null) {
                     return Single.just(siatCurrencyType);
                 } else {
                     return Single.error(new SiatCurrencyNotFoundException());

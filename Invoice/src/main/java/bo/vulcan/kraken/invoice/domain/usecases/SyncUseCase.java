@@ -41,7 +41,7 @@ public class SyncUseCase {
                 .map(response -> {
                     //TODO Modify response
                     IntegrationResponse result = new IntegrationResponse();
-                    result.setOutput(response.toString());
+//                    result.setOutput(response.toString());
                     return result;
                 });
     }

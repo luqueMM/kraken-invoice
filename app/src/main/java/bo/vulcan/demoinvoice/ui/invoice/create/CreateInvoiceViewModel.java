@@ -1,9 +1,10 @@
 package bo.vulcan.demoinvoice.ui.invoice.create;
 
+import android.util.Log;
+
 import androidx.lifecycle.ViewModel;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import bo.vulcan.demoinvoice.ui.base.Navigator;
@@ -30,7 +31,10 @@ public class CreateInvoiceViewModel extends ViewModel {
         disposables.add(mIntegration.createInvoiceBuyAndSell(getBuyAndSellRequest())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe((invoice) -> navigator.updateResponse("CREATE INVOICE SUCCESS: " + invoice),
+                .subscribe((invoice) -> {
+                            navigator.updateResponse("CREATE INVOICE SUCCESS: " + invoice);
+                            Log.d("INVOICEPDF", invoice + "");
+                        },
                         error -> {
                             navigator.updateResponse("ERROR: " + error);
                             error.printStackTrace();
@@ -38,7 +42,8 @@ public class CreateInvoiceViewModel extends ViewModel {
         );
     }
 
-    BuyAndSellRequest getBuyAndSellRequest(){
+    BuyAndSellRequest getBuyAndSellRequest() {
+
         BuyAndSellRequest buynSell = new BuyAndSellRequest(
                 "Arturo Herrera",
                 "6839033",
@@ -47,16 +52,30 @@ public class CreateInvoiceViewModel extends ViewModel {
                         new BigDecimal(1),
                         "Zapatos Amarillos",
                         new BigDecimal(50),
-                        new BigDecimal(50)
+                        new BigDecimal(50),
+                        "KR123"
                 ))
         );
 
-        buynSell.setId("0001-BuySell");
+        // Optionals
+        buynSell.setId("0003-BuySell");
         buynSell.setCustomerCode("1234");
         buynSell.setPaymentMethodType(1);
         buynSell.setUserCode("herreraa");
         buynSell.setEmailNotification("aherrera@vulcan.bo");
         buynSell.setExtraCustomerAddress("La Paz, zona Miraflores");
+        buynSell.setDocumentComplement("A1");
+
+        // Others Optionals
+        buynSell.setAdditionalDiscount(new BigDecimal("1.0"));
+        buynSell.setCafc("170421");
+        buynSell.setCardNumber("4111111111111111");
+        buynSell.setCurrencyIso(1);
+        buynSell.setExchangeRate(new BigDecimal("1.0"));
+        buynSell.setEmailNotification("no-responder@kraken.bo");
+        buynSell.setExtraMesssage("Gracias por su compra!");
+        buynSell.setGiftCard(new BigDecimal("10.0"));
+        buynSell.setInvalidNit(true);
 
         return buynSell;
     }
