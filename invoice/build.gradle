@@ -48,7 +48,6 @@ android {
         qa {
             minifyEnabled true
             debuggable true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             versionNameSuffix "-qa"
         }
         release {
@@ -117,6 +116,43 @@ android {
         }
     }
 }
+
+//def githubProperties = new Properties()
+//githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+//
+//
+//def getVersionName = { ->
+//    return "0.0.5" // Replace with version Name
+//}
+//
+//def getArtificatId = { ->
+//    return "invoice"
+//}
+//
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            aar(MavenPublication) {
+//                artifact("$buildDir/outputs/aar/${getArtificatId()}-dev-debug.aar")
+//                groupId 'bo.vulcan.krakendocs'
+//                artifactId getArtificatId()
+//                version getVersionName()
+//            }
+//        }
+//
+//        repositories {
+//            maven {
+//                name = "GitHubPackages"
+//                url = uri("https://maven.pkg.github.com/luqueMM/kraken-invoice")
+//
+//                credentials {
+//                    username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
+//                    password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+//                }
+//            }
+//        }
+//    }
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

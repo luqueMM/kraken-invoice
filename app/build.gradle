@@ -67,9 +67,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    implementation project(path: ':Invoice')
-//    implementation 'bo.vulcan.krakendocs:invoice:0.0.1'
-//    implementation 'com.github.luqueMM:kraken-invoice:0.0.2'
+    implementation project(path: ':invoice')
+//    implementation 'bo.vulcan.krakendocs:invoice:0.0.5'
 
     implementation "com.android.support:recyclerview-v7:$project.supportLibraryVersion"
 
